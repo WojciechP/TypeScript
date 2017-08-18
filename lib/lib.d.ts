@@ -4439,6 +4439,10 @@ interface MouseEventInit extends EventModifierInit {
     screenY?: number;
 }
 
+declare var DragEventInit extends MouseEventInit {
+    dataTransfer?: DataTransfer;
+}
+
 interface MSAccountInfo {
     accountImageUri?: string;
     accountName?: string;
@@ -7567,7 +7571,7 @@ interface DragEvent extends MouseEvent {
 
 declare var DragEvent: {
     prototype: DragEvent;
-    new(type: "drag" | "dragend" | "dragenter" | "dragexit" | "dragleave" | "dragover" | "dragstart" | "drop", dragEventInit?: { dataTransfer?: DataTransfer }): DragEvent;
+    new(type: "drag" | "dragend" | "dragenter" | "dragexit" | "dragleave" | "dragover" | "dragstart" | "drop", dragEventInit?: DragEventInit): DragEvent;
 };
 
 interface DynamicsCompressorNode extends AudioNode {
